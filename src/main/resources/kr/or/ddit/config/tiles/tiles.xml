@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="layout" template="/WEB-INF/views/module/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/module/header.jsp"/>
+		<put-attribute name="left" value="/WEB-INF/views/module/left.jsp"/>
+		<put-attribute name="content" value=""/>
+	</definition>
+	
+	<definition name="mainTiles" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/module/main.jsp"/>
+	</definition>
+	
+	<definition name="boardTiles" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/board/board.jsp"/>
+	</definition>
+	
+	<definition name="postingTiles" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/posting/posting.jsp"/>
+	</definition>
+	
+	<definition name="postingDetailTiles" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/posting/postingDetail.jsp"/>
+	</definition>
+	
+	<definition name="postingInsertTiles" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/posting/postingInsert.jsp"/>
+	</definition>
+	
+	<definition name="postingDeleteTiles" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/posting/postingDelete.jsp"/>
+	</definition>
+	
+	<definition name="postingUpdateTiles" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/posting/postingUpdate.jsp"/>
+	</definition>
+	
+	<definition name="replyUpdateTiles" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/reply/replyUpdate.jsp"/>
+	</definition>
+	
+</tiles-definitions>

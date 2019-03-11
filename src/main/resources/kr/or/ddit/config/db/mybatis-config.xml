@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <!-- vo 별칭 부여 -->
+  <typeAliases>
+  	<typeAlias alias="UserVo" type="kr.or.ddit.user.model.UserVo"/>
+  	<typeAlias alias="BoardVo" type="kr.or.ddit.board.model.BoardVo"/>
+  	<typeAlias alias="PostingVo" type="kr.or.ddit.posting.model.PostingVo"/>
+  	<typeAlias alias="AttachVo" type="kr.or.ddit.attach.model.AttachVo"/>
+  	<typeAlias alias="PageVo" type="kr.or.ddit.util.model.PageVo"/>
+  	<typeAlias alias="ReplyVo" type="kr.or.ddit.reply.model.ReplyVo"/>
+  </typeAliases>
+  
+  <!-- mapper 설정 -->
+  <mappers>
+    <mapper resource="kr/or/ddit/config/db/mapper/user.xml"/>
+    <mapper resource="kr/or/ddit/config/db/mapper/board.xml"/>
+    <mapper resource="kr/or/ddit/config/db/mapper/posting.xml"/>
+    <mapper resource="kr/or/ddit/config/db/mapper/attach.xml"/>
+    <mapper resource="kr/or/ddit/config/db/mapper/reply.xml"/>
+  </mappers>
+</configuration>
