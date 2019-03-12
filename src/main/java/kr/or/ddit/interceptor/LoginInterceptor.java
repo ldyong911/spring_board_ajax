@@ -54,6 +54,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		else{
 			String uri = request.getRequestURI(); // /login
 			
+			logger.debug("intercepter uri : {}", uri);
+			
 			//요청 처리
 			// /js/CookieUtil.js, /js/jsCookie.js
 			if(uri.equals("/login")
