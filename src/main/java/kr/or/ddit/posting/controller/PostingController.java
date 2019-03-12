@@ -130,8 +130,6 @@ public class PostingController{
 			model.addAttribute("replyList", replyList);
 		}
 		
-		System.out.println(request.getSession().getAttribute("userVo"));
-		
 		//필요한 정보를 request 속성에 설정한후 postingDetail.jsp로 forward
 		return "postingDetailTiles";
 	}
