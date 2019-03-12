@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.or.ddit.attach.model.AttachVo;
 import kr.or.ddit.attach.service.IAttachService;
@@ -35,23 +34,20 @@ public class AttachController{
 	}
 	
 	@RequestMapping(path="/attachDelete", method=RequestMethod.GET)
-	public String attachDelete(@RequestParam("posting_num")String paramPosting_num,
-								@RequestParam("attach_num")String paramAttach_num,
+	public String attachDelete(String posting_num, String attach_num,
 								Model model){
 		//게시글 번호와 첨부파일번호를 파라미터로 받음
-		String posting_num_str = paramPosting_num;
-		Integer posting_num = Integer.parseInt(posting_num_str);
-		String attach_num_str = paramAttach_num;
-		Integer attach_num = Integer.parseInt(attach_num_str);
+		Integer paramPosting_num = Integer.parseInt(posting_num);
+		Integer paramAttach_num = Integer.parseInt(attach_num);
 		
 		//기존의 첨부파일 삭제
-		attachService.deleteAttach(attach_num);
+		attachService.deleteAttach(paramAttach_num);
 		
 		//해당 게시글의 첨부파일 조회
-		List<AttachVo> attachList = attachService.selectAttachList(posting_num);
+		List<AttachVo> attachList = attachService.selectAttachList(paramPosting_num);
 		
 		//파라미터로 받은 게시글 번호로 해당 게시글 조회
-		PostingVo postingVo = postingService.selectPosting(posting_num);
+		PostingVo postingVo = postingService.selectPosting(paramPosting_num);
 		
 		//수정시 request 속성에 설정한후 postingUpdate.jsp로 forward
 		model.addAttribute("postingVo", postingVo);
