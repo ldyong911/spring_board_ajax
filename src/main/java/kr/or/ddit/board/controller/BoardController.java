@@ -67,7 +67,7 @@ public class BoardController{
 		}
 		
 		if(result == 1){
-			return "redirect:" + request.getContextPath() + "/board";
+			return "redirect:" + "/board"; //루트path 지정해야하지만 contextPath에 관한 리스너 등록시 자동으로 붙여진다!!!
 		}else{
 			return "boardTiles";
 		}

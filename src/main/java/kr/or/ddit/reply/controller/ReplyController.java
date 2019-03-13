@@ -53,7 +53,7 @@ public class ReplyController{
 		
 		//result 결과가 성공이든 실패든 해당 게시글 상세화면으로 넘어감
 		//정상입력(성공) - 해당 게시글 상세조회로 넘어감
-		return "redirect:" + request.getContextPath() + "/postingDetail?posting_num=" + paramPosting_num;
+		return "redirect:" + "/postingDetail?posting_num=" + paramPosting_num; //루트path 지정해야하지만 contextPath에 관한 리스너 등록시 자동으로 붙여진다!!!
 	}
 	
 	@RequestMapping(path="/replyUpdate", method=RequestMethod.GET)
@@ -84,7 +84,7 @@ public class ReplyController{
 		
 		//성공시 게시글 상세화면으로
 		if(result == 1){
-			return "redirect:" + request.getContextPath() + "/postingDetail?posting_num=" + posting_num;
+			return "redirect:" + "/postingDetail?posting_num=" + posting_num; //루트path 지정해야하지만 contextPath에 관한 리스너 등록시 자동으로 붙여진다!!!
 		}
 		//실패시
 		else{

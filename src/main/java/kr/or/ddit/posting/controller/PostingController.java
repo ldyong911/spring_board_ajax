@@ -202,7 +202,7 @@ public class PostingController{
 		if(result1 == 1){
 			//db에서 데이터를 조작하는 로직을 처리할때는 forward가 아니라 redirect를 사용해야함(새로고침시 최초요청 url로 다시 이동하기때문에)
 			//redirect는 ContextPath를 써줘야하며 redirect는 get방식임
-			return "redirect:" + request.getContextPath() + "/postingDetail?posting_num=" + paramPostingVo.getPosting_num();
+			return "redirect:" + "/postingDetail?posting_num=" + paramPostingVo.getPosting_num(); //루트path 지정해야하지만 contextPath에 관한 리스너 등록시 자동으로 붙여진다!!!
 		}
 		//정상 입력(실패)
 		else{
@@ -242,7 +242,7 @@ public class PostingController{
 			
 			//정상입력(성공) - 리다이렉트는 get방식으로 게시판번호를 넘겨줘야함
 			if(result == 1){
-				return "redirect:" + request.getContextPath() + "/posting?board_num=" + postingVo.getBoard_num();
+				return "redirect:" + "/posting?board_num=" + postingVo.getBoard_num(); //루트path 지정해야하지만 contextPath에 관한 리스너 등록시 자동으로 붙여진다!!!
 			}
 			//실패 - 다시 상세조회를 가야하므로 게시글번호를 넘겨줘야함
 			else{
@@ -308,7 +308,7 @@ public class PostingController{
 		
 		//정상입력(성공) - 해당 게시글 상세조회로 넘어감
 		if(result == 1){
-			return "redirect:" + request.getContextPath() + "/postingDetail?posting_num=" + paramPostingVo.getPosting_num();
+			return "redirect:" + "/postingDetail?posting_num=" + paramPostingVo.getPosting_num(); //루트path 지정해야하지만 contextPath에 관한 리스너 등록시 자동으로 붙여진다!!!
 		}
 		//실패 - 원래 화면을 다시 보여줌
 		else{
