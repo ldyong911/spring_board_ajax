@@ -58,7 +58,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 			
 			//요청 처리
 			// /js/CookieUtil.js, /js/jsCookie.js
-			if(uri.equals("/login")
+			if(uri.equals(request.getContextPath() + "/login") //ContextPath가 있을경우 uri에 contextPath가 붙여지기때문에 주의!
 					|| uri.endsWith(".js") || uri.endsWith(".css")
 					|| uri.endsWith(".jpg") || uri.endsWith(".jpeg")
 					|| uri.endsWith(".gif") || uri.endsWith(".png")){
